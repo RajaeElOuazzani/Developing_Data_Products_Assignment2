@@ -1,0 +1,25 @@
+---
+title: "Assignment2"
+author: "Rajae"
+date: "7/4/2020"
+output: html_document
+---
+```{r}
+library(knitr)
+library(leaflet)
+library(dplyr)
+```
+
+```{r}
+my_map <- leaflet() %>% setView (lat=33.8769, lng=-5.5527, zoom=13) %>% 
+  addTiles() %>%  # Add default OpenStreetMap map tiles
+  addMarkers(lat=33.8940, lng=-5.5066, popup="Bassatine, Meknes") %>%
+  addMarkers(lat=33.9066,lng=-5.5425, popup="Hamria, Meknes") %>%
+  addMarkers(lat=33.8668,lng=-5.5678, popup="Sbata, Meknes") %>%
+  addMarkers(lat=33.8713,lng=-5.5335, popup="Zahwa, Meknes") %>%
+  addMarkers(lat=33.8547,lng=-5.5809, popup="Marjane, Meknes") %>%
+  addMarkers(lat=33.8682,lng=-5.5854, popup="Elmensour, Meknes") 
+  
+  
+my_map  # Print the map
+```
